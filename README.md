@@ -1,2 +1,2 @@
 # ai-devops-incident-analyzer
-AI-powered DevOps incident analysis platform using CrewAI, FastAPI, React, PostgreSQL, Docker, CI/CD, and monitoring.
+Production-ready AI-powered DevOps incident analysis platform with multi-agent workflows, automated root cause analysis, remediation planning, monitoring, and cloud deployment.
