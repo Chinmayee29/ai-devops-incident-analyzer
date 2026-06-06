@@ -1,0 +1,10 @@
+INFO Application started
+INFO PostgreSQL connected
+WARNING CPU usage reached 90%
+WARNING Memory usage reached 85%
+ERROR Database connection timeout
+ERROR Database connection timeout
+ERROR Database connection timeout
+INFO Retrying connection
+ERROR Connection failed
+INFO Service restarted

@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from app.config import settings
 from app.routers.incidents import router as incidents_router
 from app.routers import stats
+from app.routers import logs
+from app.routers import analysis
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -10,6 +12,8 @@ app = FastAPI(
 )
 app.include_router(incidents_router)
 app.include_router(stats.router)
+app.include_router(logs.router)
+app.include_router(analysis.router)
 
 
 @app.get("/")

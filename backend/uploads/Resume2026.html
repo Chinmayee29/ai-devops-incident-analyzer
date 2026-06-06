@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koti Chinmayee Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GENERAL RESET & TYPOGRAPHY --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #111;
+            line-height: 1.32; /* Micro-adjustment to pull up the last line */
+            font-size: 9.5pt; 
+        }
+
+        /* --- LINKS --- */
+        a {
+            color: #111;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .icon-link {
+            margin-left: 4px;
+            font-size: 11px;
+            color: #222;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        /* --- CONTAINER --- */
+        .resume-container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 15px 40px; 
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2c3e50;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            font-size: 9.5pt;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .contact-info .separator {
+            color: #aaa;
+            margin: 0 3px;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            margin-bottom: 7px; /* Micro-adjustment (was 8px) */
+        }
+
+        h2 {
+            font-size: 11pt;
+            color: #2c3e50;
+            text-transform: uppercase;
+            border-bottom: 1px solid #2c3e50;
+            padding-bottom: 1px;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        /* --- SUMMARY --- */
+        .summary p {
+            text-align: justify;
+            font-size: 9.5pt;
+            margin-bottom: 0;
+        }
+
+        /* --- EDUCATION TABLE --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 2px 0; 
+            font-size: 9.5pt;
+            vertical-align: top;
+        }
+
+        th {
+            font-weight: 700;
+            color: #2c3e50;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .col-exam { width: 14%; }
+        .col-major { width: 28%; }
+        .col-inst { width: 38%; }
+        .col-year { width: 12%; }
+        .col-cgpa { width: 8%; }
+
+        /* --- SIMPLE LISTS (Skills) --- */
+        .simple-list {
+            list-style: disc inside;
+            margin-left: 5px;
+        }
+        .simple-list li {
+            margin-bottom: 1.5px; 
+        }
+
+        /* --- EXPERIENCE, PROJECTS, ACHIEVEMENTS --- */
+        .project-item, .achievement-item {
+            margin-bottom: 5px; 
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .project-header h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .project-header .date {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: #2c3e50;
+        }
+
+        /* Custom Bullet Lists */
+        .experience ul, .projects ul, .achievements ul {
+            list-style: none;
+        }
+
+        .experience ul li, .projects ul li, .achievements ul li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 1.5px;
+            font-size: 9.5pt;
+            text-align: justify;
+        }
+
+        .experience ul li::before, .projects ul li::before, .achievements ul li::before {
+            content: "◦"; 
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 1.32;
+        }
+
+        /* --- CERTIFICATIONS (Grid) --- */
+        .cert-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 15px; 
+            list-style: disc inside;
+            margin: 0;
+        }
+
+        .cert-list li {
+            font-size: 9.5pt;
+            margin-bottom: 2px;
+        }
+        
+        .cert-list li strong {
+            font-weight: 600;
+        }
+
+        /* --- PRINT SETTINGS --- */
+        @media print {
+            body { 
+                font-size: 9.5pt; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .resume-container {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+            
+            /* Ensure links work in PDF */
+            a { text-decoration: none !important; color: #000 !important; }
+            a[href] { pointer-events: auto !important; }
+
+            /* MICRO-ADJUSTMENT: 0.35in margin to capture that last line */
+            @page { 
+                size: A4 portrait;
+                margin: 0.35in; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <header>
+            <h1>KOTI CHINMAYEE</h1>
+            <div class="contact-info">
+                <span>(+91) 9652278844</span>
+                <span class="separator">|</span>
+                <a href="mailto:chinmayeekoti8844@gmail.com">chinmayeekoti8844@gmail.com</a>
+                <span class="separator">|</span>
+                <a href="https://www.linkedin.com/in/koti-chinmayee-38556728b" target="_blank">LinkedIn</a>
+                <span class="separator">|</span>
+                <a href="https://github.com/Chinmayee29" target="_blank">Chinmayee29</a>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>OBJECTIVE</h2>
+            <p>
+                Analytic Computer Science student with strong fundamentals in Data Structures and Algorithms and Machine Learning fundamentals. Passionate about Data analytics and Web Development, aiming to build impactful data-driven software with user-friendly interfaces. Thrives in collaborative environments and eager to contribute to solving real-world problems through innovative engineering.
+            </p>
+        </section>
+
+        <section class="education">
+            <h2>EDUCATION</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-exam">Examination</th>
+                        <th class="col-major">Majors</th>
+                        <th class="col-inst">Institute</th>
+                        <th class="col-year">Year</th>
+                        <th class="col-cgpa">CGPA/%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.Tech</td>
+                        <td>CSE(Data Science)</td>
+                        <td>B V Raju Institute of Technology</td>
+                        <td>2023 - 2027</td>
+                        <td>9.27</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate</td>
+                        <td>MPC</td>
+                        <td>Sri Vagdevi Junior College</td>
+                        <td>2021 - 2023</td>
+                        <td>97.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Matriculation</td>
+                        <td>SSC</td>
+                        <td>Sri Chaitanya School</td>
+                        <td>2021</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="skills">
+            <h2>SKILLS</h2>
+            <ul class="simple-list">
+                <li><strong>Programming Languages:</strong> Java, C, SQL, Python</li>
+                <li><strong>Data Analytics & ML:</strong> Pandas, NumPy, Scikit-learn, Matplotlib, EDA</li>
+                <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript, Bootstrap</li>
+                <li><strong>Tools:</strong> Git, GitHub, VS Code, Jupyter Notebook, AWS (Foundational), Salesforce</li>
+                <li><strong>Core Competencies:</strong> Data Structures & Algorithms, Problem-Solving, Team Collaboration</li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            <h2>EXPERIENCE</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Data Analytics Intern | Club Inquizitive</h3>
+                    <span class="date">Aug 2025 &ndash; Present</span>
+                </div>
+                <ul>
+                    <li>Visualized college alumni data to identify trends and derive actionable insights using data analytics tools, aiding administration in engagement strategies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>PROJECTS</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Hybrid Intrusion Detection System</h3>
+                    <span class="date">Dec 2025 &ndash; Mar 2026 | <a href="https://github.com/Chinmayee29/miniproject-IIOT" target="_blank" class="icon-link"><i class="fab fa-github"></i></a></span>
+                </div>
+                <ul>
+                    <li>    Designed hybrid ML-DL model using GRU and Random Forest for intrusion detection.</li>
+                    <li>    Achieved 98.3% accuracy using SMOTE, feature engineering, and optimization.</li>
+                    <li>    Evaluated model using precision, recall, and F1-score.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Secure Smart Lock System</h3>
+                    <span class="date">Jan 2025 &ndash; May 2025 | <a href="https://github.com/Chinmayee29/Secure-Smart-Lock-grocery-delivery-System" target="_blank" class="icon-link"><i class="fab fa-github"></i></a></span>
+                </div>
+                <ul>
+                    <li>    Built secure system ensuring tamper-proof delivery with authentication.</li>
+                    <li>    Implemented role-based access and dynamic lock code generation.</li>
+                    <li>    Developed responsive UI using HTML, CSS, and JavaScript.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Blogify - Full Stack Blogging Platform</h3>
+                    <span class="date">Aug 2025 &ndash; Oct 2025 | <a href="https://github.com/Chinmayee29/blogify-platform" target="_blank" class="icon-link"><i class="fab fa-github"></i></a></span>
+                </div>
+                <ul>
+                    <li>    Developed MERN stack application with JWT authentication and CRUD operations.</li>
+                    <li>    Designed REST APIs and integrated MongoDB for efficient data handling.</li>
+                    <li>    Improved user experience with responsive UI and real-time updates.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2>ACHIEVEMENTS</h2>
+            
+            <div class="achievement-item">
+                <div class="project-header">
+                    <h3>Qualified Round 2 - TCS CodeVita Season 13</h3>
+                </div>
+                <ul>
+                    <li>Cleared Round 1 and qualified for Round 2, demonstrating advanced problem-solving skills in a global contest.</li>
+                </ul>
+            </div>
+
+            <div class="achievement-item">
+                <div class="project-header">
+                    <h3>Selected for PALS InnoWah</h3>
+                </div>
+                <ul>
+                    <li>Selected as one of the Top 5 teams from the college to compete in the prestigious PALS InnoWah challenge.</li>
+                </ul>
+            </div>
+
+            <div class="achievement-item">
+                <div class="project-header">
+                    <h3>Real-time CEMS Dashboard Collaboration</h3>
+                </div>
+                <ul>
+                    <li>Built a real-time dashboard for live power generation monitoring with per-second data acquisition, collaborating with professors from IIT Hyderabad and BVRIT.</li>
+                </ul>
+            </div>
+
+            <div class="achievement-item">
+                <div class="project-header">
+                    <h3>Smart India Hackathon (SIH) - College Level Qualifier</h3>
+                    
+                </div>
+                <ul>
+                    <li>Secured 2nd place in the internal hackathon, demonstrating strong problem-solving skills.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>CERTIFICATIONS</h2>
+            <ul class="cert-list">
+                <li><strong>Salesforce:</strong> Agentforce Specialist</li>
+                <li><strong>Oracle:</strong> Java Programming Certificate</li>
+                <li><strong>AWS:</strong> Cloud Practitioner Essentials</li>
+                <li><strong>IBM:</strong> Data Fundamentals</li>
+                <li><strong>Coursera:</strong> Python for Data Analysis</li>
+                <li><strong>NPTEL:</strong> DSA using JAVA (IIT KGP)</li>
+                <li><strong>Infosys:</strong> Programming using Java</li>
+                <li><strong>TASK:</strong> Frontend Dev with JavaScript</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>
