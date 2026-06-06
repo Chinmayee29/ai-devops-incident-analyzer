@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.core.database import get_db
 from app.models.incident import Incident
-from app.schemas.incident import IncidentCreate
+from app.schemas.incident import IncidentCreate, IncidentUpdate
 
 router = APIRouter(
     prefix="/incidents",
@@ -28,6 +28,28 @@ def create_incident(
     )
 
     db.add(db_incident)
+    db.commit()
+    db.refresh(db_incident)
+
+    return db_incident
+
+@router.put("/{incident_id}")
+def update_incident(
+    incident_id: int,
+    incident: IncidentUpdate,
+    db: Session = Depends(get_db)
+):
+    db_incident = (
+        db.query(Incident)
+        .filter(Incident.id == incident_id)
+        .first()
+    )
+
+    if not db_incident:
+        return {"error": "Incident not found"}
+
+    db_incident.status = incident.status
+
     db.commit()
     db.refresh(db_incident)
 

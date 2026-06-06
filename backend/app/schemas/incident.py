@@ -18,3 +18,14 @@ class IncidentResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+        
+from pydantic import BaseModel
+
+class IncidentCreate(BaseModel):
+    title: str
+    description: str
+    severity: str
+
+class IncidentUpdate(BaseModel):
+    status: str
