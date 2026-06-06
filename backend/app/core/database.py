@@ -23,3 +23,10 @@ from app.models.base import Base
 from app.models.incident import Incident
 
 Base.metadata.create_all(bind=engine)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
