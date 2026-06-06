@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.config import settings
 from app.routers.incidents import router as incidents_router
+from app.routers import stats
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -8,6 +9,7 @@ app = FastAPI(
     description="Backend API for AI-powered DevOps incident analysis"
 )
 app.include_router(incidents_router)
+app.include_router(stats.router)
 
 
 @app.get("/")
